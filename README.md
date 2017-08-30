@@ -11,3 +11,6 @@ A blog bulit with [laravel](https://laravel.com/).
 
 
 > note: The bootstrap/cache & storage directory must be present and writable.
+
+## License
+Free / Open sourced under the [MIT](https://github.com/magiclyde/laravel-blog/blob/master/LICENSE).
