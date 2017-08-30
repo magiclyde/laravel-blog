@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class PostsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = \Faker\Factory::create('en_US');
+        App\Models\Post::truncate();
+    	foreach (range(1, 20) as $number) {
+    		App\Models\Post::create([
+	            'title' => $faker->title . '-' .$number,
+	            'author' => $faker->name,
+	            'content' => $faker->paragraph,
+	            'is_publish' => rand(0, 1),
+                'visit_count' => rand(10, 200),
+	            'comment_count' => rand(1, 20),
+                'created_at' => Carbon\Carbon::now()->addDays($number),
+	            'updated_at' => Carbon\Carbon::now()->addDays($number),
+	        ]);
+	    }
+    }
+}
