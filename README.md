@@ -1,12 +1,13 @@
-# laravel-blog
-A blog bulit with laravel.
+# Laravel-blog
+A blog bulit with [laravel](https://laravel.com/).
 
-# Install
+## Install
 1. cd path/to/laravel-blog
-2. cp .env.example .env && config your settings
-3. composer install
+2. composer install
+3. cp .env.example .env && config your settings
 4. php artisan key:generate 
 5. php artisan migrate
 6. php artisan db:seed
 
-note: The bootstrap/cache & storage directory must be present and writable.
+
+> note: The bootstrap/cache & storage directory must be present and writable.
