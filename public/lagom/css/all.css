@@ -713,6 +713,14 @@ nav h1, nav h2 {
   border-width: 1px 0;
 }
 
+#dashboard {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  border-top: dotted #ddd;
+  border-width: 1px 0;
+}
+
 #post pre {
   border: 1px solid #ddd;
   background-color: #eef;
@@ -754,7 +762,7 @@ nav h1, nav h2 {
   border-left: 1px solid #DDD;
   padding-left: 40px;
   padding-top: 25px;
-  min-height: 600px;
+  min-height: 710px;
 }
 
 .footer {

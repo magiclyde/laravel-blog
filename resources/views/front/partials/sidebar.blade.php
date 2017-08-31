@@ -15,7 +15,10 @@
     <div id="social">Follow me:
         @include('front.partials.social')
     </div>
-    <!-- <div id="tags">Tags:<br>
+    <div id="tags">
         @include('front.partials.tags')
-    </div> -->
+    </div>
+    <div id="dashboard">
+        <a href="{{ url('/dashboard') }}"><i class="fa fa-long-arrow-right"></i>&nbsp;Dashboard</a>
+    </div>
 </nav>
