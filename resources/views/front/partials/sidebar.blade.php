@@ -1,7 +1,7 @@
 <nav>
     <h1>Hi,</h1>
     <a href="/"><img src="/logo.jpg" id="logo" alt="Blog logo"/></a>
-    <h2>I'm <a href="javascipt:;">{{ config('app.author') }}</a>.</h2>
+    <h2>I'm <a href="{{ url('/') }}">{{ config('app.author') }}</a>.</h2>
     <div id="search">
         <form class="search-form" method="get" action="/s">
             <input type="text" name="q" placeholder='Search ...'>

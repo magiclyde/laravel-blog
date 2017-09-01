@@ -17,13 +17,13 @@
                 <button type="button" id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i> Refresh</button>
             </div>
             <div class="col-md-11">
-            	<form action="{{ url('/dashboard/article/search') }}" method="get">
-                	<div class="input-group">
-		            	<input type="text" name="article" placeholder="Search" class="input-sm form-control"> 
-		            	<span class="input-group-btn">
-		            		<button type="button" class="btn btn-sm btn-primary"> Go!</button> 
-		            	</span>
-                	</div>
+            	<form id='search-form' action="{{ url('/dashboard/article/search') }}" method="get">
+                    <div class="input-group">
+                        <input type="text" name="article" placeholder="Search" class="input-sm form-control"> 
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary" onclick="search(event)"> Go!</button> 
+                        </span>
+                    </div>
                 </form>
             </div>
         </div>
@@ -48,7 +48,7 @@
 	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a5.jpg') }}"></a>
 	                    </td>
 	                    <td class="project-actions">
-	                        <a href="{{ url('/dashboard/article/preview') }}/1" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> Preview </a>
+	                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
 	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>
 	                </tr>
@@ -83,15 +83,20 @@
     });
 
     function simpleLoad(btn, state) {
-            if (state) {
-                btn.children().addClass('fa-spin');
-                btn.contents().last().replaceWith(" Loading");
-            } else {
-                setTimeout(function () {
-                    btn.children().removeClass('fa-spin');
-                    btn.contents().last().replaceWith(" Refresh");
-                }, 2000);
-            }
+        if (state) {
+            btn.children().addClass('fa-spin');
+            btn.contents().last().replaceWith(" Loading");
+        } else {
+            setTimeout(function () {
+                btn.children().removeClass('fa-spin');
+                btn.contents().last().replaceWith(" Refresh");
+            }, 2000);
         }
+    }
+
+    function search(e) {
+        e.preventDefault();
+        document.getElementById('search-form').submit();
+    } 
 </script>
 @endsection
