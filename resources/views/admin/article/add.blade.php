@@ -17,7 +17,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Bootstrap markdown <small>http://www.codingdrama.com/bootstrap-markdown/</small></h5>
+                <h5>Write something...</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -37,14 +37,16 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <p>
-                    Bootstrap-Markdown designed to be easily integrated with your bootstrap project. It exposes useful API that allow you to fully hook-in into the plugin
-                </p>
-                <p>
-                    Switch regular textarea within your form into Bootstrap-Markdown editor seamlessly by adding <code>data-provide="markdown"</code> attribute
-                </p>
-
-                <textarea name="content" data-provide="markdown" rows="10"></textarea>
+            	<div class="row">
+	            	<div class="col-md-12">
+		            	<div class="form-group pull-right">
+		                    <button class="btn btn-xs btn-white" type="submit">Cancel</button>
+		                    <button class="btn btn-xs btn-success" type="submit">Publish</button>
+		                    <button class="btn btn-xs btn-primary" type="submit">Save changes</button>
+		                </div>
+	                </div>
+                </div>
+                <textarea name="content" data-provide="markdown" rows="15"></textarea>
             </div>
         </div>
     </div>
@@ -54,7 +56,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
-
+        	
             <div class="ibox-content">
 
                 <h2>
