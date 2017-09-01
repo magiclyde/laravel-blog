@@ -56,10 +56,10 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 	Route::get('/dashboard/file/upload', 'FileController@upload')->name('upload');
 
 	/* ------------------------------ article ------------------------------ */
-	Route::get('/dashboard/article/index', 'ArticleController@index');
+	Route::get('/dashboard/article/list', 'ArticleController@index');
 	Route::get('/dashboard/article/add', 'ArticleController@add');
 	Route::get('/dashboard/article/edit/{id}', 'ArticleController@edit')->where('id', '[0-9]+');
-	Route::get('/dashboard/article/preview/{id}', 'ArticleController@preview')->where('id', '[0-9]+');
+	Route::get('/dashboard/article/preview/{id?}', 'ArticleController@preview')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/pubilsh/{id}', 'ArticleController@pubilsh')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/remove/{id}', 'ArticleController@remove')->where('id', '[0-9]+');
 

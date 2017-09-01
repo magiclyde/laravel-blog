@@ -20,20 +20,13 @@
                 </div>
             </li>
             <li id="dashboard">
-                <a href="{{ url('/dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+                <a href="{{ url('/dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
             </li>
             <li id="articles">
                 <a href="#"><i class="fa fa-text-width"></i> <span class="nav-label">Articles</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li id="article_lists"><a href="{{ url('/dashboard/article/index') }}">Lists</a></li>
+                    <li id="article_list"><a href="{{ url('/dashboard/article/list') }}">List</a></li>
                     <li id="article_add"><a href="{{ url('/dashboard/article/add') }}">New</a></li>
-                </ul>
-            </li>
-            <li id="profile">
-                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">User</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li id="profile_edit"><a href="{{ url('/dashboard/user/profile') }}">Profile</a></li>
-                    <li id="profile_settings"><a href="{{ url('/dashboard/settings') }}">Settings</a></li>
                 </ul>
             </li>
             <li id="mailbox">
@@ -46,45 +39,14 @@
             <li id="widgets">
                 <a href="{{ url('/dashboard/widgets') }}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a href="#toastr_notifications.html">Notification</a></li>
-                    <li><a href="#nestable_list.html">Nestable list</a></li>
-                    <li><a href="#agile_board.html">Agile board</a></li>
-                    <li><a href="#timeline_2.html">Timeline v.2</a></li>
-                    <li><a href="#diff.html">Diff</a></li>
-                    <li><a href="#pdf_viewer.html">PDF viewer</a></li>
-                    <li><a href="#i18support.html">i18 support</a></li>
-                    <li><a href="#sweetalert.html">Sweet alert</a></li>
-                    <li><a href="#idle_timer.html">Idle timer</a></li>
-                    <li><a href="#truncate.html">Truncate</a></li>
-                    <li><a href="#password_meter.html">Password meter</a></li>
-                    <li><a href="#spinners.html">Spinners</a></li>
-                    <li><a href="#spinners_usage.html">Spinners usage</a></li>
-                    <li><a href="#tinycon.html">Live favicon</a></li>
-                    <li><a href="#google_maps.html">Google maps</a></li>
-                    <li><a href="#datamaps.html">Datamaps</a></li>
-                    <li><a href="#social_buttons.html">Social buttons</a></li>
-                    <li><a href="#code_editor.html">Code editor</a></li>
-                    <li><a href="#modal_window.html">Modal window</a></li>
-                    <li><a href="#clipboard.html">Clipboard</a></li>
-                    <li><a href="#text_spinners.html">Text spinners</a></li>
-                    <li><a href="#forum_main.html">Forum view</a></li>
-                    <li><a href="#validation.html">Validation</a></li>
-                    <li><a href="#tree_view.html">Tree view</a></li>
-                    <li><a href="#loading_buttons.html">Loading buttons</a></li>
-                    <li><a href="#chat_view.html">Chat view</a></li>
-                    <li><a href="#masonry.html">Masonry</a></li>
-                    <li><a href="#tour.html">Tour</a></li>
-                </ul>
-            </li>
             <li id="gallery">
-                <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
+                <a href="{{ url('/dashboard/gallery') }}"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span></a>
+            </li>
+            <li id="profile">
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">User</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="#basic_gallery.html">Lightbox Gallery</a></li>
-                    <li><a href="#slick_carousel.html">Slick Carousel</a></li>
-                    <li><a href="#carousel.html">Bootstrap Carousel</a></li>
+                    <li id="profile_edit"><a href="{{ url('/dashboard/user/profile') }}">Profile</a></li>
+                    <li id="profile_settings"><a href="{{ url('/dashboard/settings') }}">Settings</a></li>
                 </ul>
             </li>
             <li class="landing_link">
