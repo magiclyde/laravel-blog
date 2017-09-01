@@ -22,15 +22,22 @@
             <li id="dashboard">
                 <a href="{{ url('/dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
             </li>
-            <li id="profile">
-                <a href="{{ url('/dashboard/user/profile') }}"><i class="fa fa-user"></i> <span class="nav-label">User</span><span class="fa arrow"></span></a>
+            <li id="articles">
+                <a href="#"><i class="fa fa-text-width"></i> <span class="nav-label">Articles</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li id="profile_edit"><a href="{{ url('/dashboard/user/profile') }}">profile</a></li>
-                    <li id="profile_settings"><a href="{{ url('/dashboard/settings') }}">settings</a></li>
+                    <li id="article_lists"><a href="{{ url('/dashboard/article/index') }}">Lists</a></li>
+                    <li id="article_add"><a href="{{ url('/dashboard/article/add') }}">New</a></li>
+                </ul>
+            </li>
+            <li id="profile">
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">User</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="profile_edit"><a href="{{ url('/dashboard/user/profile') }}">Profile</a></li>
+                    <li id="profile_settings"><a href="{{ url('/dashboard/settings') }}">Settings</a></li>
                 </ul>
             </li>
             <li id="mailbox">
-                <a href="{{ url('/dashboard/mailbox/inbox') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+                <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
                 <ul class="nav nav-second-level collapse">
                     <li id="mail_inbox"><a href="{{ url('/dashboard/mailbox/inbox') }}">Inbox</a></li>
                     <li id="mailbox_compose"><a href="{{ url('/dashboard/mailbox/compose') }}">Compose email</a></li>
@@ -72,7 +79,7 @@
                     <li><a href="#tour.html">Tour</a></li>
                 </ul>
             </li>
-            <li>
+            <li id="gallery">
                 <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="#basic_gallery.html">Lightbox Gallery</a></li>
