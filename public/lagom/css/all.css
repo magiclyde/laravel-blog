@@ -664,6 +664,20 @@ ul.posts span {
   font-size:14px;
 }
 
+ul.pagination {
+  margin-top: 46px;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+ul.pagination li.prev{
+	float: left;
+}
+
+ul.pagination li.next{
+	float: right;
+}
+
 .meta {
   color: #aaa;
   margin: 0 0 10px 0;
@@ -762,7 +776,7 @@ nav h1, nav h2 {
   border-left: 1px solid #DDD;
   padding-left: 40px;
   padding-top: 25px;
-  min-height: 710px;
+  min-height: 660px;
 }
 
 .footer {

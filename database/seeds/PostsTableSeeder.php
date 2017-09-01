@@ -13,9 +13,9 @@ class PostsTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('en_US');
         App\Models\Post::truncate();
-    	foreach (range(1, 20) as $number) {
+    	foreach (range(1, 60) as $number) {
     		App\Models\Post::create([
-	            'title' => $faker->title . '-' .$number,
+	            'title' => $faker->title . '-' . $faker->name . '#' .$number,
 	            'author' => $faker->name,
 	            'content' => $faker->paragraph,
 	            'is_publish' => rand(0, 1),

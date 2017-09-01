@@ -18,7 +18,7 @@
     <div id="tags">
         @include('front.partials.tags')
     </div>
-    <div id="dashboard">
+    <!-- <div id="dashboard">
         <a href="{{ url('/dashboard') }}"><i class="fa fa-long-arrow-right"></i>&nbsp;Dashboard</a>
-    </div>
+    </div> -->
 </nav>

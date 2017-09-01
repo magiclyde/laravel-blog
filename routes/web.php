@@ -62,6 +62,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 	Route::get('/dashboard/article/preview/{id?}', 'ArticleController@preview')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/pubilsh/{id}', 'ArticleController@pubilsh')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/remove/{id}', 'ArticleController@remove')->where('id', '[0-9]+');
+	Route::get('/dashboard/article/search', 'ArticleController@search');
 
 	/* ------------------------------ gallery ------------------------------ */
 	Route::get('/dashboard/gallery', 'GalleryController@index');

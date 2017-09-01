@@ -8,10 +8,8 @@
 
 <div class="ibox">
     <div class="ibox-title">
-        <h5>Article list</h5>
-        <div class="ibox-tools">
-            <a href="{{ url('/dashboard/article/add') }}" class="btn btn-primary btn-xs">Create new article</a>
-        </div>
+        <h5>Article searches</h5>
+        
     </div>
     <div class="ibox-content">
         <div class="row m-b-sm m-t-sm">
@@ -54,27 +52,6 @@
 	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>
 	                </tr>
-	                <tr>
-	                    <td class="article-status">
-	                        <span class="label label-default">Unactive</span>
-	                    </td>
-	                    <td class="project-title">
-	                        <a href="{{ url('/dashboard/article/edit') }}/2">There are many variations of passages</a>
-	                        <br/>
-	                        <small>Created 11.08.2014</small>
-	                    </td>
-
-	                    <td class="project-people">
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a7.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a6.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a3.jpg') }}"></a>
-	                    </td>
-	                    <td class="project-actions">
-	                        <a href="{{ url('/dashboard/article/preview') }}/2" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> Preview </a>
-	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-	                    </td>
-	                </tr>
-                
                 </tbody>
             </table>
         </div>
@@ -91,7 +68,6 @@
     $(document).ready(function(){
         $("#articles").addClass("active");
         $("#articles .nav-second-level").addClass("in");
-        $("#article_list").addClass("active");
 
         $('#loading-example-btn').click(function () {
             btn = $(this);

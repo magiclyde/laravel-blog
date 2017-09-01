@@ -53,4 +53,15 @@ class ArticleController extends Controller
     {
 
     }
+
+    /**
+     * display a list of searches
+     * 
+     * @return 
+     */
+    public function search()
+    {
+        $data = [];
+        return view('admin.article.search', ['data' => $data]);
+    }
 }

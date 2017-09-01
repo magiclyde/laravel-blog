@@ -23,7 +23,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = $this->repos->getList();
+        $articles = $this->repos->getList(20);
         return view('front.index', ['articles' => $articles]);
     }
 
