@@ -5162,32 +5162,32 @@ a.compose-mail {
 .mail-ontact {
   width: 23%;
 }
-/* ARTICLES */
-.article-people,
-.article-actions {
+/* POSTS */
+.post-people,
+.post-actions {
   text-align: right;
   vertical-align: middle;
 }
-dd.article-people {
+dd.post-people {
   text-align: left;
   margin-top: 5px;
 }
-.article-people img {
+.post-people img {
   width: 32px;
   height: 32px;
 }
-.article-title a {
+.post-title a {
   font-size: 14px;
   color: #676a6c;
   font-weight: 600;
 }
-.article-list table tr td {
+.post-list table tr td {
   border-top: none;
   border-bottom: 1px solid #e7eaec;
   padding: 15px 10px;
   vertical-align: middle;
 }
-.article-manager .tag-list li a {
+.post-manager .tag-list li a {
   font-size: 10px;
   background-color: white;
   padding: 5px 12px;
@@ -5198,7 +5198,7 @@ dd.article-people {
   margin-top: 5px;
   display: block;
 }
-.article-files li a {
+.post-files li a {
   font-size: 11px;
   color: #676a6c;
   margin-left: 10px;
@@ -8601,4 +8601,8 @@ body.md-skin {
   #page-wrapper {
     margin: 0;
   }
+}
+
+.create-artcle {
+  margin-bottom: 10px;
 }

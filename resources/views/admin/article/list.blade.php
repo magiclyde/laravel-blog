@@ -7,12 +7,10 @@
 @section('content')
 
 <div class="ibox">
-    <div class="ibox-title">
-        <h5>Article list</h5>
-        <div class="ibox-tools">
-            <a href="{{ url('/dashboard/article/add') }}" class="btn btn-primary btn-xs">Create new article</a>
-        </div>
+    <div class="create-artcle">
+        <a href="{{ url('/dashboard/article/add') }}" class="btn btn-primary btn-block">Create new article</a>
     </div>
+
     <div class="ibox-content">
         <div class="row m-b-sm m-t-sm">
             <div class="col-md-1">
@@ -30,46 +28,36 @@
             </div>
         </div>
 
-        <div class="article-list">
+        <div class="post-list">
             <table class="table table-hover">
                 <tbody>
 	                <tr>
-	                    <td class="article-status">
-	                        <span class="label label-primary">Active</span>
+	                    <td class="post-status">
+	                        <span class="label label-primary">Released</span>
 	                    </td>
-	                    <td class="project-title">
+	                    <td class="post-title">
 	                        <a href="{{ url('/dashboard/article/edit') }}/1">Contract with Zender Company</a>
 	                        <br/>
 	                        <small>Created 14.08.2014</small>
 	                    </td>
-	                    <td class="project-people">
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a3.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a1.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a2.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a4.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a5.jpg') }}"></a>
-	                    </td>
-	                    <td class="project-actions">
+	                    
+	                    <td class="post-actions">
 	                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
 	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>
 	                </tr>
 	                <tr>
 	                    <td class="article-status">
-	                        <span class="label label-default">Unactive</span>
+	                        <span class="label label-default">Draft</span>
 	                    </td>
-	                    <td class="project-title">
+	                    <td class="post-title">
 	                        <a href="{{ url('/dashboard/article/edit') }}/2">There are many variations of passages</a>
 	                        <br/>
 	                        <small>Created 11.08.2014</small>
 	                    </td>
 
-	                    <td class="project-people">
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a7.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a6.jpg') }}"></a>
-	                        <a href=""><img alt="image" class="img-circle" src="{{ asset('inspiration/img/a3.jpg') }}"></a>
-	                    </td>
-	                    <td class="project-actions">
+	                    
+	                    <td class="post-actions">
 	                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
 	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>

@@ -40,13 +40,14 @@
             	<div class="row">
 	            	<div class="col-md-12">
 		            	<div class="form-group pull-right">
-		                    <button class="btn btn-xs btn-white" type="submit">Cancel</button>
-		                    <button class="btn btn-xs btn-success" type="submit">Publish</button>
-		                    <button class="btn btn-xs btn-primary" type="submit">Save changes</button>
+		                    <button class="btn btn-sm btn-white" type="submit">Cancel</button>
+		                    <button class="btn btn-sm btn-success" type="submit">Publish</button>
+		                    <button class="btn btn-sm btn-primary" type="submit">Save changes</button>
 		                </div>
 	                </div>
                 </div>
-                <textarea name="content" data-provide="markdown" rows="15"></textarea>
+                <textarea name="content" data-provide="markdown" rows="18"></textarea>
+                
             </div>
         </div>
     </div>
