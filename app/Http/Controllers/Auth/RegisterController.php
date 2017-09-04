@@ -37,6 +37,19 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
+        // this way you can create new users if you want, but you have to be logged in first
+        //$this->middleware('auth');
+    }
+
+    /**
+     * @override RegistersUsers@showRegistrationForm
+     * to Disable registration
+     */
+    protected function showRegistrationForm()
+    {
+        //you can use Session::get('warning') to get flash message in view
+        return redirect()->to('login')->with('warning', 'Registration is disabled.');
     }
 
     /**
