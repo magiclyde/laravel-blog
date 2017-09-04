@@ -1,19 +1,18 @@
 <?php
-
 namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Core\Domain\Repository\PostRepository;
+use Core\Domain\Services\MyService;
 
 
 class IndexController extends Controller
 {
-    protected $repos;
+    protected $service;
 
-    public function __construct(PostRepository $repos)
+    public function __construct(MyService $service)
     {
-        $this->repos = $repos;
+        $this->service = $service;
     }
 
     /**
@@ -23,8 +22,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = $this->repos->getList(20);
-        return view('front.index', ['articles' => $articles]);
+        $articles = $this->service->getPostList(20);
+        $tags = $this->service->getAllTag();
+
+        return view('front.index', 
+            [
+                'articles' => $articles, 
+                'tags'=> $tags
+            ]
+        );
     }
 
 

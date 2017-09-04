@@ -24,6 +24,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $models = array('Post', 'Tag');
+
+        foreach ($models as $idx => $model) {
+            $interface = 'Core\\Domain\\Contracts\\' . $model. "RepositoryInterface";
+            $repos = 'Core\\Domain\\Repositories\\'. $model . "Repository";
+
+            // register service container for DI
+            $this->app->bind($interface, $repos);
+        } 
+
     }
 }

@@ -16,7 +16,9 @@
         @include('front.partials.social')
     </div>
     <div id="tags">
-        @include('front.partials.tags')
+        @if(isset($tags))
+            @include('front.partials.tags')
+        @endif
     </div>
     <!-- <div id="dashboard">
         <a href="{{ url('/dashboard') }}"><i class="fa fa-long-arrow-right"></i>&nbsp;Dashboard</a>
