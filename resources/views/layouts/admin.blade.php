@@ -13,7 +13,10 @@
 
     @yield('css_content')
 
-    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <!-- <link rel="icon" type="image/svg+xml" href="/logo.svg"> -->
+    <link rel="shortcut icon" href="/logo.ico">
+    <link rel="icon" type="image/png" href="/logo-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-180x180.png">
 
 </head>
 

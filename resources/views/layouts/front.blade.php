@@ -16,7 +16,12 @@
     <meta name="description" content="The blog of magiclyde" />
     <link rel="canonical" href="https://magiclyde.me/" />
     <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    
+    <!-- <link rel="icon" type="image/svg+xml" href="/logo.svg"> -->
+    <link rel="shortcut icon" href="/logo.ico">
+    <link rel="icon" type="image/png" href="/logo-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-180x180.png">
+
     <link rel="alternate" type="application/atom+xml" title="magiclyde" href="https://magiclyde.me/atom.xml" />
     <link rel="stylesheet" href="{{ asset('lagom/css/all.css') }}">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
