@@ -13,7 +13,7 @@
 
     @yield('css_content')
 
-    <link rel="shortcut icon" href="/m.ico">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
 
 </head>
 

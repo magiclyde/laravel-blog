@@ -800,7 +800,8 @@ nav h1, nav h2 {
 }
 
 #logo, #gravatar {
-  margin-bottom: 25px;
+  margin-bottom: 14px;
+  max-height: 100px;
 }
 
 #gravatar {
