@@ -12,9 +12,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $slug)
     {
-        $posts = [];
-        return view('front.post_sample', ['posts' => $posts]);
+        $post = $this->service->getPostBySlug($slug);
+
+        return view('front.post', ['post' => $post]);
     }
 }

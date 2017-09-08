@@ -22,7 +22,10 @@
             "App\\": "app/",
             "Core\\": "core/",
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "scripts": {
         "post-root-package-install": [

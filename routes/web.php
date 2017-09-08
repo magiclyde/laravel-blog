@@ -16,7 +16,7 @@
 
 Route::get('/', 'Front\IndexController@index')->name('entry');
 
-Route::get('/post/{slug}', 'Front\PostController@index')->name('post');
+Route::get('/post/{slug}.html', 'Front\PostController@index')->name('post');
 
 Route::get('/s', 'Front\SearchController@index');
 
@@ -57,10 +57,15 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function() {
 
 	/* ------------------------------ article ------------------------------ */
 	Route::get('/dashboard/article/list', 'ArticleController@index');
+
 	Route::get('/dashboard/article/add', 'ArticleController@add');
+	Route::post('/dashboard/article/store', 'ArticleController@store');
+
 	Route::get('/dashboard/article/edit/{id}', 'ArticleController@edit')->where('id', '[0-9]+');
+	Route::post('/dashboard/article/update', 'ArticleController@update');
+
 	Route::get('/dashboard/article/preview/{id?}', 'ArticleController@preview')->where('id', '[0-9]+');
-	Route::get('/dashboard/article/pubilsh/{id}', 'ArticleController@pubilsh')->where('id', '[0-9]+');
+	Route::get('/dashboard/article/pubilsh/{id?}', 'ArticleController@pubilsh')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/remove/{id}', 'ArticleController@remove')->where('id', '[0-9]+');
 	Route::get('/dashboard/article/search', 'ArticleController@search');
 

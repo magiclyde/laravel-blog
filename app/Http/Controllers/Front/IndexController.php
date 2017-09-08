@@ -3,18 +3,11 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Core\Domain\Services\MyService;
 
 
 class IndexController extends Controller
 {
-    protected $service;
-
-    public function __construct(MyService $service)
-    {
-        $this->service = $service;
-    }
-
+    
     /**
      * Display a entry page.
      *

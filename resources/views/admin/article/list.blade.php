@@ -31,41 +31,33 @@
         <div class="post-list">
             <table class="table table-hover">
                 <tbody>
+
+                @foreach ($posts as $key => $item)
 	                <tr>
 	                    <td class="post-status">
-	                        <span class="label label-primary">Released</span>
-	                    </td>
+                            @if($item->is_publish)
+                                <span class="label label-primary">Released</span>
+                            @else
+                                <span class="label label-default">Draft</span>
+                            @endif
+                        </td>
 	                    <td class="post-title">
-	                        <a href="{{ url('/dashboard/article/edit') }}/1">Contract with Zender Company</a>
+	                        <a href="{{ url('/dashboard/article/edit') }}/{{ $item->id }}">{{ $item->title }}</a>
 	                        <br/>
-	                        <small>Created 14.08.2014</small>
+	                        <small>Created {{ $item->created_at->format("d.M.Y") }}</small>
 	                    </td>
 	                    
 	                    <td class="post-actions">
-	                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+	                        <a href="{{ url('post/'.$item->slug) }}.html?preview=true" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+	                        <a href="{{ url('/dashboard/article/edit') }}/{{ $item->id }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>
 	                </tr>
-	                <tr>
-	                    <td class="article-status">
-	                        <span class="label label-default">Draft</span>
-	                    </td>
-	                    <td class="post-title">
-	                        <a href="{{ url('/dashboard/article/edit') }}/2">There are many variations of passages</a>
-	                        <br/>
-	                        <small>Created 11.08.2014</small>
-	                    </td>
+                @endforeach
 
-	                    
-	                    <td class="post-actions">
-	                        <a href="#" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
-	                        <a href="{{ url('/dashboard/article/edit') }}/2" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-	                    </td>
-	                </tr>
-                
                 </tbody>
             </table>
         </div>
+        @include('vendor.pagination.simple-default', ['paginator' => $posts])
     </div>
 </div>
 

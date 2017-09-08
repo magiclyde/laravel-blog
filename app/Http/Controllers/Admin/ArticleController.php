@@ -16,21 +16,47 @@ class ArticleController extends Controller
 	public function index()
     {
         $data = [];
-        return view('admin.article.list', ['data' => $data]);
+        $posts = $this->service->getAllPost();
+        return view('admin.article.list', ['posts' => $posts]);
     }
 
-    public function add()
+    /**
+     * render article create page
+     */
+    public function add(Request $request)
     {
         $data = [];
         return view('admin.article.add', ['data' => $data]);
     }
 
-    public function edit($id, $editorType='')
+    /**
+     * Store a new post.
+     *
+     * @param  Request  $request
+     * @return Response
+     */
+    public function store(Request $request)
     {
-        $data = [];
-        return view('admin.article.edit', ['data' => $data]);
+        $this->service->createPost($request);
+
+        return redirect('/dashboard/article/list');
     }
 
+    /**
+     * render article edit page
+     */
+    public function edit($id)
+    {
+        $article = $this->service->getPostById($id);
+        //dd($article);
+        return view('admin.article.edit', ['article' => $article]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->service->updatePost($request);
+        return redirect('/dashboard/article/list');
+    }
 
     public function preview($id)
     {
