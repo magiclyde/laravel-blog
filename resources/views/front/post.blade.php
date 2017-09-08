@@ -18,6 +18,7 @@
 		        </li>
 		    </ul>
 		</div> -->
+		<br>
 	@else
 		<div id="home">
 		    <h2><i class="fa fa-frown-o"></i> Ah, that's nothing left...</h2>
