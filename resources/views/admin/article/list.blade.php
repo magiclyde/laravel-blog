@@ -57,7 +57,9 @@
                 </tbody>
             </table>
         </div>
-        @include('vendor.pagination.simple-default', ['paginator' => $posts])
+
+        {{ $posts->links('vendor.pagination.custom') }}
+
     </div>
 </div>
 

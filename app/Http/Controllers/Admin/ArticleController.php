@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 
 class ArticleController extends Controller
 {
@@ -13,11 +14,10 @@ class ArticleController extends Controller
      * 
      * @return 
      */
-	public function index()
+	public function index(Request $request)
     {
-        $data = [];
         $posts = $this->service->getAllPost();
-        return view('admin.article.list', ['posts' => $posts]);
+        return view('admin.article.list', compact('posts'));
     }
 
     /**

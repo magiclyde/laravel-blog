@@ -31,5 +31,8 @@ Use **php artisan tinker** to open psy shell and add the following commands to c
     $user->password = Hash::make('the-pass');
     $user->save();
 
+### Pagination 
+> php artisan vendor:publish --tag=laravel-pagination
+
 ## License
 Free / Open sourced under the [MIT](https://github.com/magiclyde/laravel-blog/blob/master/LICENSE).
