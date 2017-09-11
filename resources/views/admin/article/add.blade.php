@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-md-12 ">
                             <div class="form-group ">
-                                <textarea name="content" data-provide="markdown" rows="18"></textarea>
+                                <textarea name="content" data-provide="markdown" rows="25"></textarea>
                             </div>
                         </div>
                     </div>

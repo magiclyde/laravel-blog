@@ -8,8 +8,7 @@
         </form>
     </div>
     <div id="bio">
-        <p>A back-end web developer from Guangzhou, China and I specialize in LNMP .</p>
-        <p>Btw, friends call me <a href="javascipt:;">magiclyde</a>.</p>
+        <p>A back-end web developer, from Guangzhou, specialized in LNMP .</p>
         <p>If you have a project or creative need that i can help with, please <a href="#">get in touch</a>.</p>
     </div>
     <div id="social">Follow me:
