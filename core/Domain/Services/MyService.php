@@ -47,16 +47,15 @@ class MyService
 		return $this->post->create($request->all());
 	}
 
-	public function updatePost(Request $request)
+	public function updatePost($id, array $data)
 	{
-		$id = $request->input('id');
-		$updateArr['title'] = $request->input('title');
-		$updateArr['content'] = $request->input('content');
-		$updateArr['marked_html'] = markdown_parse($request->input('content'));
-
-		return $this->post->update($id, $updateArr);
+		return $this->post->update($id, $data);
 	}
 
+	public function removePost($id)
+	{
+		return $this->post->delete($id);
+	}
 
 	public function getAllTag()
 	{

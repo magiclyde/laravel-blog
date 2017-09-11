@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
+    protected $dates = ['published_at'];
 
-        if (! $this->exists) {
-            $this->attributes['slug'] = str_slug($value);
-        }
-    }
+    //public function setTitleAttribute($value)
+    //{
+    //    $this->attributes['title'] = $value;
+    //    if (! $this->exists) {
+    //        $this->attributes['slug'] = str_slug($value);
+    //    }
+    //}
 
     //public function setContentAttribute($value)
     //{

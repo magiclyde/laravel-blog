@@ -15,7 +15,7 @@ class PostRepository implements PostRepositoryInterface
     public function getHotPosts($count = 10)
     {
         return Post::where('is_publish', '=', 1)
-                ->select('title', 'slug' ,'comment_count')
+                ->select('title', 'slug', 'author', 'marked_html', 'comment_count', 'visit_count', 'published_at')
                 ->orderBy('visit_count', 'desc')
                 ->take($count)
                 ->get();
@@ -40,9 +40,11 @@ class PostRepository implements PostRepositoryInterface
     {
         $post = new Post();
         $post->title = $data['title'];
+        $post->slug = !empty($data['slug'])? $data['slug'] : str_slug($data['title']);
         $post->is_publish = isset($data['is_publish'])? intval($data['is_publish']) : 0;
         $post->content = $data['content'];
         $post->marked_html = markdown_parse($data['content']);
+        $post->published_at = $data['published_at'];
         $result = $post->save();
 
         return $result;

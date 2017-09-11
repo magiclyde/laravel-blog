@@ -54,7 +54,14 @@ class ArticleController extends Controller
 
     public function update(Request $request)
     {
-        $this->service->updatePost($request);
+        $id = $request->input('id');
+        $updateArr['title'] = $request->input('title');
+        $updateArr['slug'] = !empty($request->input('slug'))? $request->input('slug'): str_slug($request->input('title'));
+        $updateArr['content'] = $request->input('content');
+        $updateArr['marked_html'] = markdown_parse($request->input('content'));
+        $updateArr['published_at'] = $request->input('published_at');
+        $this->service->updatePost($id, $updateArr);
+
         return redirect('/dashboard/article/list');
     }
 
@@ -67,17 +74,36 @@ class ArticleController extends Controller
     /**
      * @return Bool
      */
-    public function pubilsh($id)
+    public function pubilsh(Request $request, $id)
     {
-    	
+        $updateArr['is_publish'] = 1;
+        $isUp = $this->service->updatePost($id, $updateArr);
+        if ($isUp) {
+            $alertType = 'success';
+            $msg = 'success to pubilsh.';
+        } else {
+            $alertType = 'warning';
+            $msg = 'fail to pubilsh.';
+        }
+
+    	return redirect('/dashboard/article/list')->with($alertType, $msg);
     }
 
     /**
      * @return Bool
      */
-    public function remove($id)
+    public function remove(Request $request, $id)
     {
+        $isRem = $this->service->removePost($id);
+        if ($isRem) {
+            $alertType = 'success';
+            $msg = 'success to remove.';
+        } else {
+            $alertType = 'warning';
+            $msg = 'fail to remove.';
+        }
 
+        return redirect('/dashboard/article/list')->with($alertType, $msg);
     }
 
     /**

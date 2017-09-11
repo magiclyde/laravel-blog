@@ -5,6 +5,20 @@
 @endsection
 
 @section('content')
+    @if (\Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('success') !!}</li>
+            </ul>
+        </div>
+    @endif
+    @if (\Session::has('warning'))
+        <div class="alert alert-warning">
+            <ul>
+                <li>{!! \Session::get('warning') !!}</li>
+            </ul>
+        </div>
+    @endif
 
 <div class="ibox">
     <div class="create-artcle">
@@ -48,7 +62,8 @@
 	                    </td>
 	                    
 	                    <td class="post-actions">
-	                        <a href="{{ url('post/'.$item->slug) }}.html?preview=true" class="btn btn-white btn-sm"><i class="fa fa-folder"></i> View </a>
+	                        <a data-href="{{ url('/dashboard/article/remove/'.$item->id) }}" class="btn btn-white btn-sm remove-post"><i class="fa fa-trash-o"></i> Remove </a>
+                            <a href="{{ url('post/'.$item->slug) }}?preview=true" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> View </a>
 	                        <a href="{{ url('/dashboard/article/edit') }}/{{ $item->id }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
 	                    </td>
 	                </tr>
@@ -63,6 +78,19 @@
     </div>
 </div>
 
+<!-- modals -->
+<div id="confirm" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">Are you sure?</div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-sm btn-primary" id="delete">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn btn-sm">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!-- Custom and plugin javascript -->
 <script src="{{ asset('inspiration/js/inspinia.js') }}"></script>
@@ -86,6 +114,27 @@
 
             //simpleLoad(btn, false)
         });
+
+        $('.remove-post').click(function (e) {
+            e.preventDefault();
+            var href = $(this).attr("data-href");
+            $('#confirm').modal({
+                backdrop: 'static',
+                keyboard: false
+            }).one('click', '#delete', function(e) {
+                //console.log('delete');
+                window.location.href = href;
+            });
+        });
+
+        $(".alert-success").fadeTo(2000, 500).slideUp(200, function(){
+            $(".alert-success").alert('close');
+        });
+
+        /*$(".alert-warning").fadeTo(2000, 500).slideUp(200, function(){
+            $(".alert-warning").alert('close');
+        });*/
+
     });
 
     function simpleLoad(btn, state) {
@@ -103,6 +152,7 @@
     function search(e) {
         e.preventDefault();
         document.getElementById('search-form').submit();
-    } 
+    }
+
 </script>
 @endsection

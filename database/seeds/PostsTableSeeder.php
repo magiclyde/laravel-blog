@@ -15,21 +15,26 @@ class PostsTableSeeder extends Seeder
         App\Models\Post::truncate();
 
     	//foreach (range(1, 60) as $number) {
+        //  $title = $faker->title . '-' . $faker->name . '#' .$number;
     	//	App\Models\Post::create([
-	    //        'title' => $faker->title . '-' . $faker->name . '#' .$number,
+        //        'title' => $title,
+	    //        'slug' => str_slug($title),
 	    //        'author' => $faker->name,
 	    //        'content' => $faker->paragraph,
+        //        'marked_html'=> markdown_parse($faker->paragraph),
 	    //        'is_publish' => rand(0, 1),
         //        'visit_count' => rand(10, 200),
 	    //        'comment_count' => rand(1, 20),
         //        'created_at' => Carbon\Carbon::now()->subDays($number),
-	    //        'updated_at' => Carbon\Carbon::now()->subDays($number),
+        //        'updated_at' => Carbon\Carbon::now()->subDays($number),
+	    //        'published_at' => Carbon\Carbon::now()->subDays($number),
 	    //    ]);
 	    //}
 
         $content = file_get_contents(base_path().'/README.md');
         App\Models\Post::create([
             'title' => 'laravel blog',
+            'slug' => 'laravel-blog',
             'author' => 'magiclyde',
             'content' => $content,
             'marked_html'=> markdown_parse($content),
@@ -38,6 +43,7 @@ class PostsTableSeeder extends Seeder
             'comment_count' => 0,
             'created_at' => Carbon\Carbon::now(),
             'updated_at' => Carbon\Carbon::now(),
+            'published_at' => Carbon\Carbon::now(),
         ]);
     }
 }

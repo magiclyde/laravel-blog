@@ -16,7 +16,7 @@
 
 Route::get('/', 'Front\IndexController@index')->name('entry');
 
-Route::get('/post/{slug}.html', 'Front\PostController@index')->name('post');
+Route::get('/post/{slug}', 'Front\PostController@index')->name('post');
 
 Route::get('/s', 'Front\SearchController@index');
 
