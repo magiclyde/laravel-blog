@@ -5,7 +5,7 @@
 	@if($post->marked_html)
 		<link href="{{ asset('css/markdown.css') }}" rel="stylesheet">
 
-		<p class="meta">{{ $post->created_at->format("M d, Y") }}<a href="/"><i class="home fa fa-home"></i></a></p>
+		<p class="meta">{{ $post->published_at->format("M d, Y") }}<a href="/"><i class="home fa fa-home"></i></a></p>
 		<div id="post">
 			<article class="markdown-body">{!! $post->marked_html !!}</article>
 		</div>
