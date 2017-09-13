@@ -1,5 +1,5 @@
 # Laravel-blog
-A blog bulit with [laravel](https://laravel.com/).<br/>
+:rocket: A blog bulit with [laravel](https://laravel.com/).<br/>
 Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)<br/>
 
 > Status: **Work in process**
