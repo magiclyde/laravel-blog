@@ -23,7 +23,7 @@ class PostRepository implements PostRepositoryInterface
 
 	public function getLatestPosts($count = 20)
     {
-    	return Post::where('is_publish', '=', 1)->orderBy('created_at', 'desc')->simplePaginate($count);
+    	return Post::where('is_publish', '=', 1)->orderBy('published_at', 'desc')->simplePaginate($count);
     }
 
     public function getBySlug($slug)
