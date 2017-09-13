@@ -1,6 +1,6 @@
 # Laravel-blog
-:rocket: A blog bulit with [laravel](https://laravel.com/).<br/>
-Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)<br/>
+A blog bulit with [laravel](https://laravel.com/).<br/>
+Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me) :rocket:<br/>
 
 > Status: **Work in process**
 
