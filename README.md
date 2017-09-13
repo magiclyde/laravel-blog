@@ -1,6 +1,8 @@
 # Laravel-blog
 A blog bulit with [laravel](https://laravel.com/).<br/>
-Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)
+Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)<br/>
+
+> Status: **Work in process**
 
 ## Install
 1. cd path/to/laravel-blog
@@ -10,13 +12,11 @@ Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)
 5. php artisan migrate
 6. php artisan db:seed
 
-
-> note: The bootstrap/cache & storage directory must be present and writable.
+> Notice: The bootstrap/cache & storage directory must be present and writable.
 
 ## More
 ### Disable registration
 If you want to disable registration for new users, just edit **Auth\RegisterController.php** file and override the showRegistrationForm() with the following code:
-
 
     protected function showRegistrationForm()
     {
