@@ -1,5 +1,6 @@
 # Laravel-blog
-A blog bulit with [laravel](https://laravel.com/).
+A blog bulit with [laravel](https://laravel.com/).<br/>
+Online view: [http://blog.magiclyde.me](http://blog.magiclyde.me)
 
 ## Install
 1. cd path/to/laravel-blog
