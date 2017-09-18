@@ -4,12 +4,12 @@ php:
   - 7.1.9
   - nightly
 
-before_script:
-  - cp .env.travis .env
-  - php artisan key:generate
-
 install:
   - composer install --prefer-dist --optimize-autoloader --quiet
+
+before_script:
+  - cp .env.example .env
+  - php artisan key:generate
 
 script:
   - vendor/bin/phpunit
