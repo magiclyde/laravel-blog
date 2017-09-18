@@ -7,6 +7,9 @@ php:
 env:
   - APP_DEBUG=false
 
+before_script:
+  - php artisan key:generate
+
 install:
   - composer install --prefer-dist --optimize-autoloader --quiet
 
