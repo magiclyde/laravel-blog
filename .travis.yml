@@ -2,14 +2,15 @@ language: php
 
 php:
   - 7.1.9
-  - nightly
 
 install:
   - composer install --prefer-dist --optimize-autoloader --quiet
 
 before_script:
-  - cp .env.example .env
+  - cp .env.travis .env
+  - mysql -e 'create database homestead_test;'
   - php artisan key:generate
+  - php artisan migrate
 
 script:
   - vendor/bin/phpunit
