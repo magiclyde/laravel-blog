@@ -4,8 +4,5 @@ php:
   - 7.1.9
   - nightly
 
-env:
-  - APP_DEBUG=false
-
 install:
   - composer install --prefer-dist --optimize-autoloader --quiet
