@@ -26,7 +26,7 @@ If you want to disable registration for new users, just edit **Auth\RegisterCont
 ### Manually register a user 
 Use **php artisan tinker** to open psy shell and add the following commands to create new user rather than via the auth registration page.
     
-	$user = new App\User;
+	$user = new App\Models\User;
 	$user->name = 'the-account';
     $user->email = 'the-email@example.com';
     $user->password = Hash::make('the-pass');
