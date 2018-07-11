@@ -4,6 +4,7 @@ namespace Core\Domain\Services;
 use Core\Domain\Contracts\PostRepositoryInterface;
 use Core\Domain\Contracts\TagRepositoryInterface;
 use Illuminate\Http\Request;
+use sngrl\SphinxSearch\SphinxSearch;
 
 
 /**
@@ -60,5 +61,14 @@ class MyService
 	public function getAllTag()
 	{
 		return $this->tag->getAll();
+	}
+
+	public function searchBy($keyword, $index_name)
+	{
+		$sphinx = new SphinxSearch();
+
+        $results = $sphinx->search($keyword, $index_name)->get();
+
+        return $results;
 	}
 }

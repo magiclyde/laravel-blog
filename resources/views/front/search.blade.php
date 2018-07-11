@@ -4,8 +4,10 @@
 <div id="home">
     <h2><i class="fa fa-search"></i> Searches</h2>
     <ul id="blog-searches" class="posts">
-        <li><span>20 Aug 2013 &raquo;</span><a href="#">Searches1</a></li>
-        <li><span>12 Aug 2013 &raquo;</span><a href="#">Searches2</a></li>
+        @foreach ($results as $key => $item)
+            <li><span> &raquo;</span><a href="{{ url('post/'.$item->slug) }}">{{ $item->title }}</a></li>
+        @endforeach
     </ul>
+    {{ $results->appends(['q' => $keyword ])->links('vendor.pagination.simple-default') }}
 </div>
 @endsection

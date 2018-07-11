@@ -9,12 +9,23 @@ class SearchController extends Controller
 {
     /**
      * Display a list of the searches.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = [];
-        return view('front.search', ['data' => $data]);
+
+        $keyword = $request->q;
+        $searchResults = $this->service->searchBy($keyword, 'idx_post');
+
+        $perPage = 15;
+        $options = ['path'=>url('s')];
+        $paginatedSearchResults = my_paginate($searchResults, $perPage, '', $options);
+
+        return view('front.search', 
+                    [
+                        'results' => $paginatedSearchResults, 
+                        'keyword' => $keyword
+                    ]
+        );
     }
+
 }
